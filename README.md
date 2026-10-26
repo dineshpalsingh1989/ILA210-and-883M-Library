@@ -4,7 +4,7 @@ Firmware downloads for the **Wilcoxon 883M gateway** on the **Cytron IRIV IO Con
 
 ## Download
 
-Prepared firmware: **4.10.0-beta.3**. [Release and downloads](https://github.com/dineshpalsingh1989/IRIV-883M-Firmware/releases/tag/v4.10.0-beta.3).
+Distribution: **Main release**. [Release and downloads](https://github.com/dineshpalsingh1989/IRIV-883M-Firmware/releases/tag/v4.10.0-beta.3).
 
 | File | Use |
 | --- | --- |
@@ -21,11 +21,11 @@ Prepared firmware: **4.10.0-beta.3**. [Release and downloads](https://github.com
 
 This firmware is for the 883M IRIV gateway. Use the correct firmware for your board and sensor.
 
-## Beta status
+## Build and validation status
 
-Hardware validation is pending. The watchdog is disabled in this beta, so a hang may require a manual reset or power cycle. Use plain MQTT on a trusted network or through a local broker; MQTT over TLS is not supported for bench use in the current IRIV project guidance.
+Hardware validation is pending. The watchdog is disabled in this build, so a hang may require a manual reset or power cycle. Use plain MQTT on a trusted network or through a local broker; MQTT over TLS is not supported for bench use in the current IRIV project guidance.
 
-These are existing prepared beta.3 binaries verified against their supplied checksums, not a fresh build. Compilation and simulated browser tests do not establish hardware behavior. Boot, I/O, sensor communication, networking, settings persistence and update recovery still require hardware verification.
+This is the main firmware release. The unchanged binaries, filenames and release tag retain the internal build identifier `4.10.0-beta.3`. Their supplied SHA-256 checksums have been verified; this publication did not rebuild the firmware. Compilation and simulated browser tests do not establish hardware behavior. Boot, I/O, sensor communication, networking, settings persistence and update recovery still require hardware verification.
 
 ## Source project
 
