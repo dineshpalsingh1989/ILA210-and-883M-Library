@@ -1,8 +1,8 @@
 # ILA210 and 883M Library
 
-**Firmware downloads for Wilcoxon ILA210 and 883M sensor gateways on the Cytron IRIV IO Controller.**
+**Firmware downloads and reusable Arduino/PlatformIO libraries for Wilcoxon sensor gateways on the Cytron IRIV IO Controller.**
 
-Choose the firmware for your sensor. Each sensor has its own IOC image. This repository is a firmware download library; reusable Arduino library source lives in the source project.
+Choose the firmware for your sensor. Each sensor has its own IOC image. Reusable Arduino/PlatformIO library source, examples and tests are available in [library/](library/README.md).
 
 The gateways read sensor data over Modbus RTU and provide Ethernet integration, Modbus TCP, MQTT and browser interfaces.
 
@@ -11,6 +11,21 @@ The gateways read sensor data over Modbus RTU and provide Ethernet integration, 
 ![Simplified Cytron IRIV IO Controller front panel and gateway connections](docs/images/iriv-io-controller.svg)
 
 *Controller illustration, not a photograph or a wiring substitute. Check your unit's terminal labels and the board and sensor manuals before connecting equipment.*
+
+## Arduino and PlatformIO libraries
+
+The updated source package includes four libraries. See the [library installation guide](library/README.md) for dependencies and test commands.
+
+| Library | Version | Purpose |
+| --- | --- | --- |
+| [IRIVIOCHardware](library/libraries/IRIVIOCHardware/README.md) | 0.1.0-alpha.1 | W5500 Ethernet and bounded LittleFS settings |
+| [W5500SecureMqtt](library/libraries/W5500SecureMqtt/README.md) | 0.1.0-alpha.3 | Certificate-validated MQTT using WilcoxonMqtt |
+| [WilcoxonMqtt](library/libraries/WilcoxonMqtt/README.md) | 0.1.0-alpha.1 | MQTT 3.1.1 client for plain or TLS Arduino connections |
+| [Wilcoxon883MRTU](library/libraries/Wilcoxon883MRTU/README.md) | 0.1.0-beta.4 | 883M Modbus RTU client and optional TCP register server |
+
+Copy the individual library directories from `library/libraries/` into your PlatformIO project's `lib/` directory or Arduino sketchbook's `libraries/` directory. Each library includes its own MIT license. The ILA210 firmware downloads remain available below; the four-library source package above does not include the separate ILA210 Modbus library.
+
+Verification for this source publication: WilcoxonMqtt protocol tests, Wilcoxon883MRTU discovery/RTU/TCP native tests, and the W5500SecureMqtt IRIV compile example passed. Native tests use simulated transports; real controller, sensor and broker validation remain pending. These library source updates have not been rebuilt into the downloadable gateway firmware.
 
 ## 883M gateway features
 
